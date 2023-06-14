@@ -18,4 +18,8 @@ jobs:
     - name: Build executable
       run: |
         pyinstaller --onefile server.py
-
+- name: Upload artifacts
+  uses: actions/upload-artifact@v2
+  with:
+    name: my-artifact # 你可以为此处更改名称
+    path: engine_proxy/.github/workflows/
