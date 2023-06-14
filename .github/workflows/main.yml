@@ -17,10 +17,9 @@ jobs:
         pip install pyinstaller
     - name: Build executable
       run: |
-        pyinstaller --onefile engine_proxy/client.py
-
-- name: Upload artifacts
-  uses: actions/upload-artifact@v2
-  with:
-    name: my-artifact # 你可以为此处更改名称
-    path: engine_proxy/.github/workflows/
+        pyinstaller --onefile engine_proxy/sever.py
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: sever
+        path: dist/
